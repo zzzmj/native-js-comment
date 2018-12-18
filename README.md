@@ -13,3 +13,6 @@
 - 随机给用户头像
 - 显示评论时间
 - 记录评论的条数
+
+## 预览地址
+https://zzzmj.github.io/demo/comment/index.html
