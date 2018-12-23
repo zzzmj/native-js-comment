@@ -1,8 +1,6 @@
 const commitButton = e('.btn-commit')
 
 const template = function(comment) {
-    console.log('template', comment);
-    console.log('name:', comment.name);
     const t = `
         <div class="yd-comment-item row">
             <div class="col-md-1">
@@ -27,7 +25,6 @@ const template = function(comment) {
 const insertComment = function(comment) {
     const commentWrap = e('.yd-comment-wrap')
     const t = template(comment)
-    
     commentWrap.insertAdjacentHTML('beforeend', t)
 }
 
@@ -49,13 +46,11 @@ const saveComment = function() {
         comments.push(comment)
     }
     console.log('comments', comments);
-
     localStorage.comments = JSON.stringify(comments)
 }
 
 const loadComment = function() {
     // 从localStorge中读取所有的评论并载入, 一开始没有评论, localStorage为空
-
     var num = e('.span-comment-num')
     var s = localStorage.comments
     if (s !== '') {
@@ -85,7 +80,6 @@ bindEvent(commitButton, 'click', function(event) {
     insertComment(user)
     // 4. 读取页面中所有的评论信息写入到localStorge中
     saveComment()
-    console.log('user', user);
 })
 
 loadComment()
